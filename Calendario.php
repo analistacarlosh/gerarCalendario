@@ -52,7 +52,8 @@ class Calendario {
                     $diaDaSemanaEmInt = date("w", mktime(0,0,0,$contadorMes,$contadorDia,$ano));
 
                     $this->_diaDaSemana = self::_retornarDiaDaSemana($diaDaSemanaEmInt);
-                    $this->_diaDoMes    = $ano . "-" . $contadorDia . "-" . $contadorMes;
+                    
+                    $this->_diaDoMes    = $ano . "-" . str_pad($contadorMes, 2, '0', STR_PAD_LEFT) . "-" . $contadorDia;
                     
                     array_push($this->_calendario['diaDaSemana'], $this->_diaDaSemana);
                     array_push($this->_calendario['diaDoMes'], $this->_diaDoMes);
